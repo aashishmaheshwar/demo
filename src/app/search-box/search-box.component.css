@@ -1,0 +1,16 @@
+div {
+    display: block;
+    box-sizing: border-box;
+}
+
+.customBox
+{
+    height: 20vw; 
+    width: 50vw; 
+    position: relative;
+    left: 25%;
+    box-align: center; 
+    text-align: center;
+    border: 1px solid red;
+}
+
