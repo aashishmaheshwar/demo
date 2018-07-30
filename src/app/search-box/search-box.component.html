@@ -1,20 +1,23 @@
-<div class="customBox">
-  <!-- all the filters come here -->
-  <!-- "ngx-range-slider": "0.0.2", -->
-  <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
-  search-box works!
-</div>
-<br>
+<!-- <div style="display: inline-block;"> -->
 <div>
-  <div style="position:relative; left: 30%;">
-    <h1>Matching Servers</h1>
-    <ng-container *ngIf="apiResult | async as results; else elseBlock">
-      <strong>The number of servers is {{results.servers.length}}</strong>
-      <br>
-      <pre>{{results | json }}</pre>
-    </ng-container>
-    <ng-template #elseBlock>
-      <strong style="color: green;">...Loading</strong>
-    </ng-template>
+  <div class="customBox">
+    <!-- all the filters come here -->
+    <!-- "ngx-range-slider": "0.0.2", -->
+    <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
+    search-box works!
+  </div>
+  <div style="padding-left: 10vw;">
+    <div>
+      <!-- </div> style="position:relative; left: 30%;"> -->
+      <h1>Matching Servers</h1>
+      <ng-container *ngIf="apiResult | async as results; else elseBlock">
+        <strong>The number of servers is {{results.servers.length}}</strong>
+        <br>
+        <pre>{{results | json }}</pre>
+      </ng-container>
+      <ng-template #elseBlock>
+        <strong style="color: green;">...Loading</strong>
+      </ng-template>
+    </div>
   </div>
 </div>
