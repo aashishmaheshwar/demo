@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RangeSliderModule } from 'ngx-range-slider';
 
 import { AppComponent } from './app.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
@@ -14,7 +13,6 @@ import { SearchBoxComponent } from './search-box/search-box.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RangeSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
