@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SearchBoxComponent } from './search-box/search-box.component';
+import { ServersComponent } from './components/servers/servers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBoxComponent
+    ServersComponent
   ],
   imports: [
     BrowserModule,

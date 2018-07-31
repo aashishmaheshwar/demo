@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '../../../node_modules/@angular/common/http';
-import { ISearch } from '../interfaces/isearch';
+import { HttpClient } from '../../../../node_modules/@angular/common/http';
+import { ISearch } from '../../interfaces/isearch';
 
 @Component({
-  selector: 'app-search-box',
-  templateUrl: './search-box.component.html',
-  styleUrls: ['./search-box.component.css']
+  selector: 'app-servers',
+  templateUrl: './servers.component.html',
+  styleUrls: ['./servers.component.css']
 })
-export class SearchBoxComponent implements OnInit {
+export class ServersComponent implements OnInit {
   apiResult;
   search: ISearch;
   // listVals = Observable.of([20, 32, 56, 77]);
