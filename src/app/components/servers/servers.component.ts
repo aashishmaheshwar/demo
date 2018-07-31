@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '../../../../node_modules/@angular/common/http';
+// import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { ISearch } from '../../interfaces/isearch';
+import { ServerService } from '../../services/server.service';
 
 @Component({
   selector: 'app-servers',
@@ -21,10 +22,22 @@ export class ServersComponent implements OnInit {
   // use subject.
   // on changes to checkbox, range slider or any of the dropdowns, emit a value to trigger an API call
   // and update the view with the search results 
-  constructor(private _http: HttpClient) { }
+  constructor(private _serverService: ServerService) { }
 
   ngOnInit() {
-    this.apiResult = this._http.get("http://85.17.31.99:4300/api/servers");
+    // Initialize Params Object
+    // let qparameters = new HttpParams();
+
+    // // Begin assigning parameters
+    // qparameters = qparameters.append('ram', [2, 4, 6, 34].toString());
+    // qparameters = qparameters.append('hdd', ['SAS', 'SATA2'].toString());
+
+    // this.apiResult = this._http.get("http://85.17.31.99:4300/api/servers", { params: qparameters });
+    // passing a sample object for testing purpose.
+    const obj = {};
+    obj['ram'] = [2, 4, 6, 34];
+    obj['hdd'] = ['SAS', 'SATA2'];
+    this.apiResult = this._serverService.getServers(obj);
   }
 
 }
