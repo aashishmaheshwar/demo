@@ -1,0 +1,8 @@
+<span style="color: black; background-color: lightgray; padding: 2px;">{{title}}</span>
+
+<label *ngFor="let option of options">
+
+  <!-- </label> class="checkbox-inline c-checkbox"> -->
+  <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" />
+
+  <span class="fa fa-check"></span>{{option.key}}GB</label>

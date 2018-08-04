@@ -1,10 +1,16 @@
 <!-- <div style="display: inline-block;"> -->
 <div>
   <div class="customBox">
+    <br>
+    <h2>Filter Conditions</h2>
+    <br>
     <!-- all the filters come here -->
+    <app-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)">
+
+    </app-multi-checkbox>
     <!-- "ngx-range-slider": "0.0.2", -->
     <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
-    search-box works!
+    <!-- search-box works! -->
   </div>
   <div style="padding-left: 10vw;">
     <div>

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ServersComponent } from './components/servers/servers.component';
 import { ServerService } from './services/server.service';
+import { UtilitiesModule } from './feature-modules/utilities/utilities.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ServerService } from './services/server.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    UtilitiesModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

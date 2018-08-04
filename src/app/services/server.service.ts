@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '../../../node_modules/@angular/common/http';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable, BehaviorSubject } from '../../../node_modules/rxjs';
+import { ISearch } from '../interfaces/isearch';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServerService {
+  // public params: ISearch = {};
+  public search: BehaviorSubject<ISearch> = new BehaviorSubject<ISearch>({});
 
   constructor(private _http: HttpClient) { }
 
