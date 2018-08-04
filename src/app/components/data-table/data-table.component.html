@@ -1,0 +1,19 @@
+<!-- <p>
+  data-table works!
+</p> -->
+<table>
+  <thead>
+    <tr>
+      <td *ngFor="let colHeader of headers">{{colHeader}}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td>{{row.Model}}</td>
+      <td>{{row.RAM}}</td>
+      <td>{{row.HDD}}</td>
+      <td>{{row.Location}}</td>
+      <td style="text-align: right;">{{row.Price}}</td>
+    </tr>
+  </tbody>
+</table>

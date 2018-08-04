@@ -12,14 +12,16 @@
     <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
     <!-- search-box works! -->
   </div>
-  <div style="padding-left: 10vw;">
+  <div style="padding-left: 5vw;">
     <div>
       <!-- </div> style="position:relative; left: 30%;"> -->
       <h1>Matching Servers</h1>
       <ng-container *ngIf="apiResult | async as results; else elseBlock">
-        <strong>The number of servers is {{results.servers.length}}</strong>
+        <strong>The number of matching servers is {{results.servers.length}}</strong>
         <br>
-        <pre>{{results | json }}</pre>
+        <!-- <pre>{{results | json}}</pre> -->
+
+        <app-data-table [data]="results"></app-data-table>
       </ng-container>
       <ng-template #elseBlock>
         <strong style="color: green;">...Loading</strong>
