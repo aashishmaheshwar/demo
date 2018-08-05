@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { ISearch } from '../../interfaces/isearch';
 import { ServerService } from '../../services/server.service';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-servers',
@@ -69,6 +69,8 @@ export class ServersComponent implements OnInit {
     // this.apiResult = this._serverService.getServers(obj);
     this.apiResult = this._serverService.search
       .pipe(
+        // debounceTime(1000),
+        // distinctUntilChanged(),
         switchMap(p => {
           return this._serverService.getServers(p);
         })

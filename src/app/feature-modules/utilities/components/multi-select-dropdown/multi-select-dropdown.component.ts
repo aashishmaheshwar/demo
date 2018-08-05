@@ -30,6 +30,6 @@ export class MultiSelectDropdownComponent implements OnInit {
   openfor3secs() {
     setTimeout(() => {
       this.displayBox = 'none';
-    }, 3000)
+    }, 2000)
   }
 }
