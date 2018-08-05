@@ -5,7 +5,7 @@
     <span style="color: black; background-color: lightgray; padding: 3px; margin: 1vw;">{{title}}</span>
   </div>
   <div class="multiselectBox">
-    <input type="text" style="float: left;" (focus)="displayBox = 'block'" (blur)="openfor3secs();">
+    <input type="text" style="float: left;" (focus)="displayBox = 'block'" (blur)="openfor3secs();" [value]="selection">
     <br>
     <!-- <br> -->
     <div class="dropdownBox" [ngStyle]="{'display': displayBox}">

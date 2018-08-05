@@ -12,6 +12,7 @@ export class MultiSelectDropdownComponent implements OnInit {
   @Output() changeObj: EventEmitter<any> = new EventEmitter<any>();
   selectedCheckBoxes = [];
   displayBox: string = 'none';
+  selection: string = '';
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class MultiSelectDropdownComponent implements OnInit {
     if (this.selectedCheckBoxes.indexOf(option.key) !== -1 && !checked) {
       this.selectedCheckBoxes.splice(this.selectedCheckBoxes.indexOf(option.key), 1);
     }
+    this.selection = this.selectedCheckBoxes.toString();
     this.changeObj.emit(this.selectedCheckBoxes);
   }
 

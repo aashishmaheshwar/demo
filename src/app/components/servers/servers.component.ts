@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 // import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { ISearch } from '../../interfaces/isearch';
 import { ServerService } from '../../services/server.service';
-import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/operators';
+import { Observable, throwError } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-servers',
@@ -73,6 +74,10 @@ export class ServersComponent implements OnInit {
         // distinctUntilChanged(),
         switchMap(p => {
           return this._serverService.getServers(p);
+        }),
+        catchError(error => {
+          console.log(error);
+          return throwError(error.message);
         })
       )
   }
