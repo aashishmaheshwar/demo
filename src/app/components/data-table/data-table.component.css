@@ -4,6 +4,7 @@ thead tr td {
     font-size: 24px;
     padding: 10px;
     border: 1px solid transparent;
+    text-align: center;
 }
 
 tbody tr td {
