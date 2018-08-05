@@ -12,9 +12,12 @@ div {
     top: 20%; */
     float: left;
     box-align: center; 
-    text-align: center;
+    /* text-align: center; */
     border: 1px solid red;
     margin-top: 5vw;
     margin-left: 1vw;
 }
 
+.customBox h2 {
+    text-align: center;
+}

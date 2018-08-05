@@ -1,20 +1,22 @@
 <br>
-<br>
-<span style="color: black; background-color: lightgray; padding: 3px; float: left; margin: 1vw;">{{title}}</span>
-<br>
-<br>
-<div class="multiselectBox">
-  <input type="text" style="float: left;" (focus)="displayBox = 'block'" (blur)="openfor3secs();">
-  <br>
-  <!-- <br> -->
-  <div style="padding: 2px; padding-top: 1.5px; width: 12.5vw; border: 1px solid lightcoral" [ngStyle]="{'display': displayBox}">
-    <ng-container *ngFor="let option of options">
-      <div style="float: left; position: absolute;">
-        <label>
-          <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" /> {{option.key}}
-        </label>
-      </div>
-      <br>
-    </ng-container>
+<!-- <br> -->
+<div class="inline">
+  <!-- <div> -->
+  <span style="color: black; background-color: lightgray; padding: 3px; margin: 1vw;">{{title}}</span>
+  <!-- </div> -->
+  <div class="multiselectBox">
+    <input type="text" style="float: left;" (focus)="displayBox = 'block'" (blur)="openfor3secs();">
+    <br>
+    <!-- <br> -->
+    <div style="padding: 2px; padding-top: 1.5px; width: 12.5vw; border: 1px solid lightcoral" [ngStyle]="{'display': displayBox}">
+      <ng-container *ngFor="let option of options">
+        <div style="float: left; position: absolute;">
+          <label>
+            <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" /> {{option.key}}
+          </label>
+        </div>
+        <br>
+      </ng-container>
+    </div>
   </div>
 </div>

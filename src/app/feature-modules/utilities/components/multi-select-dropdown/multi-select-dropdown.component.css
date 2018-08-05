@@ -1,6 +1,10 @@
+.inline > div {
+    display: inline-block;
+}
+
 .multiselectBox {
     width: 15vw;
-    padding: 3px;
+    /* padding: 3px; */
     margin-right: 0px;
     position: absolute;
 }

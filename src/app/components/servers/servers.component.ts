@@ -29,6 +29,18 @@ export class ServersComponent implements OnInit {
     { key: 'SATA2', selected: false },
     { key: 'SSD', selected: false }
   ];
+  location_multiSelVals = [
+    { key: '2', selected: false },
+    { key: '4', selected: false },
+    { key: '8', selected: false },
+    { key: '12', selected: false },
+    { key: '16', selected: false },
+    { key: '24', selected: false },
+    { key: '32', selected: false },
+    { key: '48', selected: false },
+    { key: '64', selected: false },
+    { key: '96', selected: false }
+  ];
   // listVals = Observable.of([20, 32, 56, 77]);
   // create an interface ISearch where all are optional paramters.
 
