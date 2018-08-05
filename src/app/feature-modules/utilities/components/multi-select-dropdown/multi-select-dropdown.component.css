@@ -8,3 +8,13 @@
     margin-right: 0px;
     position: absolute;
 }
+
+.dropdownBox {
+    padding: 2px; 
+    padding-top: 1.5px; 
+    width: 14vw; 
+    border: 1px solid lightcoral;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+}

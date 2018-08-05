@@ -8,7 +8,7 @@
     <input type="text" style="float: left;" (focus)="displayBox = 'block'" (blur)="openfor3secs();">
     <br>
     <!-- <br> -->
-    <div style="padding: 2px; padding-top: 1.5px; width: 12.5vw; border: 1px solid lightcoral" [ngStyle]="{'display': displayBox}">
+    <div class="dropdownBox" [ngStyle]="{'display': displayBox}">
       <ng-container *ngFor="let option of options">
         <div style="float: left; position: absolute;">
           <label>
