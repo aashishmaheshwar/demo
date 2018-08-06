@@ -42,7 +42,6 @@ export class ServersComponent implements OnInit {
   ];
   storage_rangeVals = [0, 250, 500, 1000, 2000, 3000, 4000, 8000, 12000, 24000, 48000, 72000]; // all in GBs
   // above is the input for rangeslider
-  rangeValues = [0, 11];
 
   // listVals = Observable.of([20, 32, 56, 77]);
   // create an interface ISearch where all are optional paramters.
@@ -90,6 +89,11 @@ export class ServersComponent implements OnInit {
   // ngAfterViewChecked() {
   //   this.clearFilter = false;
   // }
+  updateStorage(value) {
+    this.search['storageMin'] = value[0];
+    this.search['storageMax'] = value[1];
+    this._serverService.search.next(this.search);
+  }
 
   updateSearch(key, value) {
     this.clearFilter = false;

@@ -1,0 +1,15 @@
+<br>
+<br>
+<div class="inline">
+  <!-- </div> style="margin-left: 10vw;"> -->
+  <div class="titleDiv">
+    <span class="titleLabel">{{title}}</span>
+  </div>
+  <div>
+    <p-slider [(ngModel)]="rangeValues" [style]="{'width':'14em'}" [min]="0" [max]="options.length-1" [range]="true" [step]="1"
+      (onChange)="handleChange($event)"></p-slider>
+  </div>
+</div>
+<!-- <div>
+  {{actualValues[0]}} to {{actualValues[1]}}
+</div> -->
