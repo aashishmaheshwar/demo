@@ -3,6 +3,30 @@ div {
     box-sizing: border-box;
 }
 
+.header {
+    display: inline;
+}
+
+.innerHeader, .clearDiv {
+    background-color: lightyellow;
+}
+
+.innerHeader {
+    display: block;
+    float: left;
+    width: 70%;
+    /* text-align: right; */
+}
+
+.innerHeader > h2 {
+    margin: 0px;
+}
+
+.clearDiv {
+    width: 30%; 
+    float:left;
+}
+
 .customBox
 {
     height: 30vw; 
@@ -20,4 +44,24 @@ div {
 
 .customBox h2 {
     text-align: center;
+    margin-bottom: 0vw;
 }
+
+.clearSpan {
+    float: right; 
+    margin-right: 1vw;
+}
+
+.clearBtn {
+    height: 2vw;
+    color: black;
+    background-color: lightgoldenrodyellow;
+    /* border: 1px solid; */
+}
+
+.clearBtn:hover {
+    cursor: pointer;
+}
+/* .clearSpan:hover {
+    cursor: pointer;
+} */

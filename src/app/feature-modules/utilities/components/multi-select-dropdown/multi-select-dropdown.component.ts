@@ -1,14 +1,15 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-multi-select-dropdown',
   templateUrl: './multi-select-dropdown.component.html',
   styleUrls: ['./multi-select-dropdown.component.css']
 })
-export class MultiSelectDropdownComponent implements OnInit {
+export class MultiSelectDropdownComponent implements OnInit, OnChanges {
 
   @Input() options: any;
   @Input() title: string;
+  @Input() clear: boolean;
   @Output() changeObj: EventEmitter<any> = new EventEmitter<any>();
   selectedCheckBoxes = [];
   displayBox: string = 'none';
@@ -16,6 +17,15 @@ export class MultiSelectDropdownComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    if (this.clear) {
+      let clist = document.getElementsByTagName("input");
+      for (var i = 0; i < clist.length; ++i) { clist[i].checked = false; }
+      this.selectedCheckBoxes = [];
+      this.selection = '';
+    }
   }
 
   onChangeSelection(option, checked) {

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 // import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { ISearch } from '../../interfaces/isearch';
 import { ServerService } from '../../services/server.service';
-import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/operators';
-import { Observable, throwError } from '../../../../node_modules/rxjs';
+import { switchMap, catchError } from 'rxjs/operators';
+import { throwError } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-servers',
@@ -86,12 +86,23 @@ export class ServersComponent implements OnInit {
       )
   }
 
+  // ngAfterViewChecked() {
+  //   this.clearFilter = false;
+  // }
+
   updateSearch(key, value) {
+    this.clearFilter = false;
     if (value.toString() === '') {
       delete this.search[key];
     } else {
       this.search[key] = value;
     }
+    this._serverService.search.next(this.search);
+  }
+
+  clearFilters() {
+    this.clearFilter = true;
+    this.search = {};
     this._serverService.search.next(this.search);
   }
 

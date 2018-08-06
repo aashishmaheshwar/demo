@@ -1,34 +1,46 @@
-<!-- <div style="display: inline-block;"> -->
-<div>
-  <div class="customBox">
-    <br>
-    <h2>Filter Conditions</h2>
-    <br>
-    <!-- all the filters come here -->
-    <app-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)">
-    </app-multi-checkbox>
-    <app-multi-select-dropdown [options]="hardisk_multiSelVals" title="HDD" (changeObj)="updateSearch('hdd', $event)">
-    </app-multi-select-dropdown>
-    <app-multi-select-dropdown [options]="location_multiSelVals" title="LOCATION" (changeObj)="updateSearch('location', $event)">
-    </app-multi-select-dropdown>
-    <!-- "ngx-range-slider": "0.0.2", -->
-    <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
-    <!-- search-box works! -->
-  </div>
-  <div style="padding-left: 5vw;">
-    <div>
-      <!-- </div> style="position:relative; left: 30%;"> -->
-      <h1>Matching Servers</h1>
-      <ng-container *ngIf="apiResult | async as results; else elseBlock">
-        <strong>The number of matching servers is {{results.servers.length}}</strong>
-        <br>
-        <!-- <pre>{{results | json}}</pre> -->
-
-        <app-data-table [data]="results"></app-data-table>
-      </ng-container>
-      <ng-template #elseBlock>
-        <strong style="color: green;">...Loading</strong>
-      </ng-template>
+<div style="display: inline-block;">
+  <div>
+    <!-- filter box -->
+    <div class="customBox">
+      <br>
+      <div class="header">
+        <div class="innerHeader">
+          <h2>Filter Conditions</h2>
+        </div>
+        <div class="clearDiv">
+          <span class="clearSpan">
+            <button (click)="clearFilters();" class="clearBtn">
+              Clear Filters
+            </button>
+          </span>
+        </div>
+      </div>
+      <br>
+      <br>
+      <!-- all the filters come here -->
+      <!-- "ngx-range-slider": "0.0.2", -->
+      <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
+      <app-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)" [clear]="clearFilter">
+      </app-multi-checkbox>
+      <app-multi-select-dropdown [options]="hardisk_multiSelVals" title="HDD" (changeObj)="updateSearch('hdd', $event)" [clear]="clearFilter">
+      </app-multi-select-dropdown>
+      <app-multi-select-dropdown [options]="location_multiSelVals" title="LOCATION" (changeObj)="updateSearch('location', $event)"
+        [clear]="clearFilter">
+      </app-multi-select-dropdown>
+    </div>
+    <div style="padding-left: 5vw;">
+      <!-- Results box -->
+      <div>
+        <h1>Matching Servers</h1>
+        <ng-container *ngIf="apiResult | async as results; else elseBlock">
+          <strong>The number of matching servers is {{results.servers.length}}</strong>
+          <br>
+          <!-- <pre>{{results | json}}</pre> -->
+          <app-data-table [data]="results"></app-data-table>
+        </ng-container>
+        <ng-template #elseBlock>
+          <strong style="color: green;">...Loading</strong>
+        </ng-template>
+      </div>
     </div>
   </div>
-</div>
