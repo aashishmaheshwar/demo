@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-range-slider',
@@ -12,7 +12,7 @@ export class RangeSliderComponent implements OnInit, OnChanges {
   @Output() changeObj: EventEmitter<any> = new EventEmitter<any>();
   rangeValues = [];
   actualValues = [];
-  constructor() { }
+  constructor(private _cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.rangeValues.push(0);
@@ -23,11 +23,16 @@ export class RangeSliderComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     if (this.clear) {
+      this.rangeValues = [];
+      this.actualValues = [];
       this.rangeValues.push(0);
       this.rangeValues.push(this.options.length - 1);
       this.actualValues.push(this.options[this.rangeValues[0]]);
       this.actualValues.push(this.options[this.rangeValues[1]]);
+      // console.log('actual values are ' + this.actualValues.toString());
+      // this._cdr.detectChanges();
       this.changeObj.emit(this.actualValues);
+      // this._cdr.detectChanges();
     }
   }
 

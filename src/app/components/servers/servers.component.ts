@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { ISearch } from '../../interfaces/isearch';
 import { ServerService } from '../../services/server.service';
-import { switchMap, catchError } from 'rxjs/operators';
+import { switchMap, catchError, debounceTime } from 'rxjs/operators';
 import { throwError } from '../../../../node_modules/rxjs';
 
 @Component({
@@ -74,8 +74,7 @@ export class ServersComponent implements OnInit {
     // this.apiResult = this._serverService.getServers(obj);
     this.apiResult = this._serverService.search
       .pipe(
-        // debounceTime(1000),
-        // distinctUntilChanged(),
+        debounceTime(1000),
         switchMap(p => {
           return this._serverService.getServers(p);
         }),
