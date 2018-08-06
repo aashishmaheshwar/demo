@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { SliderModule } from 'primeng/components/slider/slider';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './components/servers/servers.component';
@@ -17,7 +21,10 @@ import { DataTableComponent } from './components/data-table/data-table.component
   imports: [
     BrowserModule,
     HttpClientModule,
-    UtilitiesModule
+    UtilitiesModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    SliderModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

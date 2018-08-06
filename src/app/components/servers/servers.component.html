@@ -20,6 +20,7 @@
       <!-- all the filters come here -->
       <!-- "ngx-range-slider": "0.0.2", -->
       <!-- <range-slider min="0" max="72" minValue="0" maxValue="1"></range-slider> -->
+      <p-slider [(ngModel)]="rangeValues" [style]="{'width':'14em'}" [range]="true" [step]="1"></p-slider>
       <app-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)" [clear]="clearFilter">
       </app-multi-checkbox>
       <app-multi-select-dropdown [options]="hardisk_multiSelVals" title="HDD" (changeObj)="updateSearch('hdd', $event)" [clear]="clearFilter">
