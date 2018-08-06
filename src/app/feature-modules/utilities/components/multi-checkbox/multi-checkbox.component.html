@@ -1,7 +1,7 @@
-<div style="margin: 1.5vw; margin-left: 1vw;">
-  <span style="color: black; background-color: lightgray; padding: 3px;">{{title}}</span>
-  <span style="margin: 0.2vw;"></span>
+<div class="checkboxContainer">
+  <span class="titleLabel">{{title}}</span>
+  <span class="spanSpace"></span>
   <label *ngFor="let option of options">
-    <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" />
-    <span class="fa fa-check"></span>{{option.key}}GB</label>
+    <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" /> {{option.key}}GB
+  </label>
 </div>

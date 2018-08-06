@@ -1,0 +1,14 @@
+.checkboxContainer {
+    margin: 1.5vw; 
+    margin-left: 1vw;
+}
+
+.titleLabel {
+    color: red; 
+    background-color: lightgoldenrodyellow; 
+    padding: 3px;
+}
+
+.spanSpace {
+    margin: 0.2vw;
+}

@@ -1,16 +1,14 @@
 <br>
-<!-- <br> -->
 <div class="inline">
-  <div style="width: 8vw;">
-    <span style="color: black; background-color: lightgray; padding: 3px; margin: 1vw;">{{title}}</span>
+  <div class="titleDiv">
+    <span class="titleLabel">{{title}}</span>
   </div>
   <div class="multiselectBox">
     <input type="text" style="float: left;" (focus)="displayBox = 'block'" (blur)="openfor3secs();" [value]="selection">
     <br>
-    <!-- <br> -->
     <div class="dropdownBox" [ngStyle]="{'display': displayBox}">
       <ng-container *ngFor="let option of options">
-        <div style="float: left; position: absolute;">
+        <div class="rowDiv">
           <label>
             <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" /> {{option.key}}
           </label>

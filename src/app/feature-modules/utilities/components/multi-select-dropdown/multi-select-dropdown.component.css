@@ -18,3 +18,19 @@
     z-index: 10;
     background-color: white;
 }
+
+.titleLabel {
+    color: red; 
+    background-color: lightgoldenrodyellow; 
+    padding: 3px; 
+    margin: 1vw;
+}
+
+.rowDiv {
+    float: left; 
+    position: absolute;
+}
+
+.titleDiv {
+    width: 8vw;
+}

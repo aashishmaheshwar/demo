@@ -12,6 +12,7 @@ import { Observable, throwError } from '../../../../node_modules/rxjs';
 })
 export class ServersComponent implements OnInit {
   apiResult;
+  clearFilter = false;
   search: ISearch = {};
   checkboxVals = [
     { key: '2', selected: false },
@@ -39,6 +40,9 @@ export class ServersComponent implements OnInit {
     { key: 'FrankfurtFRA-10', selected: false },
     { key: 'Hong KongHKG-10', selected: false }
   ];
+  storage_rangeVals = [0, 250, 500, 1000, 2000, 3000, 4000, 8000, 12000, 24000, 48000, 72000]; // all in GBs
+  // above is the input for rangeslider
+
   // listVals = Observable.of([20, 32, 56, 77]);
   // create an interface ISearch where all are optional paramters.
 
@@ -83,10 +87,11 @@ export class ServersComponent implements OnInit {
   }
 
   updateSearch(key, value) {
-    // let obj = {};
-    // obj[key] = value;
-    // this.search = { ...this.search, ...obj };
-    this.search[key] = value;
+    if (value.toString() === '') {
+      delete this.search[key];
+    } else {
+      this.search[key] = value;
+    }
     this._serverService.search.next(this.search);
   }
 
