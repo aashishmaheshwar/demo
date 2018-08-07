@@ -37,7 +37,8 @@ div {
     float: left;
     box-align: center; 
     /* text-align: center; */
-    border: 1px solid red;
+    border: 0.15vw solid coral;
+    border-radius: 1vw;
     margin-top: 7.5vw;
     margin-left: 1vw;
 }
