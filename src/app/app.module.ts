@@ -9,12 +9,14 @@ import { ServersComponent } from './components/servers/servers.component';
 import { ServerService } from './services/server.service';
 import { UtilitiesModule } from './feature-modules/utilities/utilities.module';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { ResultsSectionComponent } from './components/results-section/results-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServersComponent,
-    DataTableComponent
+    DataTableComponent,
+    ResultsSectionComponent
   ],
   imports: [
     BrowserModule,

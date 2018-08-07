@@ -1,0 +1,10 @@
+<h1>Matching Servers</h1>
+<ng-container *ngIf="results; else elseBlock">
+  <strong>The number of matching servers is {{results.servers.length}}</strong>
+  <br>
+  <!-- <pre>{{results | json}}</pre> -->
+  <app-data-table [data]="results"></app-data-table>
+</ng-container>
+<ng-template #elseBlock>
+  <strong style="color: green;">...Loading</strong>
+</ng-template>
