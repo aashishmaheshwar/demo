@@ -3,17 +3,12 @@
     margin-left: 1vw;
     width: 90%;
     display: flex;
-    /* margin-right: 0px; */
-    /* width: 8vw; */
 }
 
 .titleLabel {
     color: red; 
     background-color: lightgoldenrodyellow; 
     padding: 3px;
-    /* top: 50%; */
-    /* vertical-align: middle; */
-    /* margin-top: 50%; */
 }
 
 .spanSpace {
@@ -22,16 +17,11 @@
 
 .titleDiv {
     width: 5vw;
-    /* height: 100%; */
     float: left;
     padding-top: 1.9vw;
-    /* box-sizing: border-box; */
-    /* display: table; */
 }
 
 .optionsDiv {
     width: 16vw;
-    /* height: 100%; */
     margin-left: 2vw; 
-    /* float: right; */
 }
