@@ -1,6 +1,6 @@
 <div style="display: inline-block;">
+  <!-- Filter box begins -->
   <div>
-    <!-- filter box -->
     <div class="customBox">
       <br>
       <div class="header">
@@ -17,6 +17,17 @@
       </div>
       <br>
       <app-range-slider [options]="storage_rangeVals" title="STORAGE" (changeObj)="updateStorage($event)" [clear]="clearFilter"></app-range-slider>
+      <div class="rangeValDiv">
+        <ng-container *ngIf="search.storageMin !== undefined && search.storageMax !== undefined; else elseBlock">
+          <span>{{search.storageMin > 500 ? (search.storageMin/1000)+'TB' : search.storageMin+'GB'}}</span> to
+          <span>{{search.storageMax > 500 ? (search.storageMax/1000)+'TB' : search.storageMax+'GB'}}</span>
+        </ng-container>
+        <ng-template #elseBlock>
+          <span>0GB</span> to
+          <span>{{(storage_rangeVals[storage_rangeVals.length - 1])/1000}}TB</span>
+        </ng-template>
+      </div>
+      <br>
       <app-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)" [clear]="clearFilter">
       </app-multi-checkbox>
       <app-multi-select-dropdown [options]="hardisk_multiSelVals" title="HDD" (changeObj)="updateSearch('hdd', $event)" [clear]="clearFilter">
@@ -25,10 +36,12 @@
         [clear]="clearFilter">
       </app-multi-select-dropdown>
     </div>
+    <!-- Filter box ends -->
+    <!-- Results box begins -->
     <div style="padding-left: 4vw;">
-      <!-- Results box -->
       <div>
         <app-results-section [results]="apiResult | async"></app-results-section>
       </div>
     </div>
+    <!-- Results box ends -->
   </div>

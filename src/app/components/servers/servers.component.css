@@ -29,7 +29,7 @@ div {
 
 .customBox
 {
-    height: 30vw; 
+    height: 25vw; 
     width: 30vw; 
     /* position: relative; */
     /* left: 5%;
@@ -61,6 +61,11 @@ div {
 
 .clearBtn:hover {
     cursor: pointer;
+}
+
+.rangeValDiv {
+    margin-left: 12vw; 
+    margin-top: 1vw;
 }
 /* .clearSpan:hover {
     cursor: pointer;
