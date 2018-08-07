@@ -1,9 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges
+} from "@angular/core";
 
 @Component({
-  selector: 'app-range-slider',
-  templateUrl: './range-slider.component.html',
-  styleUrls: ['./range-slider.component.css']
+  selector: "app-range-slider",
+  templateUrl: "./range-slider.component.html",
+  styleUrls: ["./range-slider.component.css"]
 })
 export class RangeSliderComponent implements OnInit, OnChanges {
   @Input() options: [any];
@@ -12,7 +19,6 @@ export class RangeSliderComponent implements OnInit, OnChanges {
   @Output() changeObj: EventEmitter<any> = new EventEmitter<any>();
   rangeValues = [];
   actualValues = [];
-  constructor() { }
 
   ngOnInit() {
     this.reset();
@@ -39,5 +45,4 @@ export class RangeSliderComponent implements OnInit, OnChanges {
     this.actualValues.push(this.options[e.values[1]]);
     this.changeObj.emit(this.actualValues);
   }
-
 }

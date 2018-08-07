@@ -1,15 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-results-section',
-  templateUrl: './results-section.component.html',
-  styleUrls: ['./results-section.component.css']
+  selector: "app-results-section",
+  templateUrl: "./results-section.component.html",
+  styleUrls: ["./results-section.component.css"]
 })
-export class ResultsSectionComponent implements OnInit {
+export class ResultsSectionComponent {
   @Input() results;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

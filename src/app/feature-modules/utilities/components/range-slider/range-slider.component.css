@@ -1,14 +1,14 @@
 .inline > div {
-    display: inline-block;
+  display: inline-block;
 }
 
 .titleDiv {
-    width: 8vw;
+  width: 8vw;
 }
 
 .titleLabel {
-    color: red; 
-    background-color: lightgoldenrodyellow; 
-    padding: 3px; 
-    margin: 1vw;
+  color: red;
+  background-color: lightgoldenrodyellow;
+  padding: 3px;
+  margin: 1vw;
 }
