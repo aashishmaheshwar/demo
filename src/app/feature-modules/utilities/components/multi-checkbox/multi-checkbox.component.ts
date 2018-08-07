@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-multi-checkbox',
@@ -12,7 +12,7 @@ export class MultiCheckboxComponent implements OnInit, OnChanges {
   @Input() clear: boolean;
   @Output() changeObj: EventEmitter<any> = new EventEmitter<any>();
   selectedCheckBoxes = [];
-  constructor(private _renderer: Renderer2, private cdr: ChangeDetectorRef) { }
+  constructor() { }
 
   ngOnInit() {
   }

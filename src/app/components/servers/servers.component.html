@@ -9,7 +9,7 @@
         </div>
         <div class="clearDiv">
           <span class="clearSpan">
-            <button (click)="clearFilters();" class="clearBtn">
+            <button (click)="clearFilters();" class="clearBtn" [disabled]="filterDisabled">
               Clear Filters
             </button>
           </span>
@@ -38,7 +38,7 @@
     </div>
     <!-- Filter box ends -->
     <!-- Results box begins -->
-    <div style="padding-left: 4vw;">
+    <div class="resultsBox">
       <div>
         <app-results-section [results]="apiResult | async"></app-results-section>
       </div>

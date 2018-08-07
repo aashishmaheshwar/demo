@@ -63,9 +63,19 @@ div {
     cursor: pointer;
 }
 
+.clearBtn:disabled {
+    background: lightgrey;
+    color: grey;
+    cursor: none;
+}
+
 .rangeValDiv {
     margin-left: 12vw; 
     margin-top: 1vw;
+}
+
+.resultsBox {
+    padding-left: 4vw;
 }
 /* .clearSpan:hover {
     cursor: pointer;
