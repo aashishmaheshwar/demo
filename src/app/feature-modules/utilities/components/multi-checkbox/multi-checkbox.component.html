@@ -1,7 +1,11 @@
 <div class="checkboxContainer">
-  <span class="titleLabel">{{title}}</span>
-  <span class="spanSpace"></span>
-  <label *ngFor="let option of options">
-    <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" /> {{option.key}}GB
-  </label>
+  <div class="titleDiv">
+    <span class="titleLabel">{{title}}</span>
+    <!-- <span class="spanSpace"></span> -->
+  </div>
+  <div class="optionsDiv">
+    <label *ngFor="let option of options">
+      <input type="checkbox" [checked]="option.selected" (change)="onChangeSelection(option, $event.target.checked)" /> {{option.key}}GB
+    </label>
+  </div>
 </div>
