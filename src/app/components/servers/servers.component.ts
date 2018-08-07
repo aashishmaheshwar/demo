@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ISearch } from '../../interfaces/isearch';
 import { ServerService } from '../../services/server.service';
 import { switchMap, catchError, debounceTime } from 'rxjs/operators';
-import { throwError } from '../../../../node_modules/rxjs';
+import { throwError } from '@node_modules/rxjs';
 
 @Component({
   selector: 'app-servers',

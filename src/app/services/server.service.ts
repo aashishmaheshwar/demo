@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '../../../node_modules/@angular/common/http';
-import { Observable, BehaviorSubject } from '../../../node_modules/rxjs';
+import { HttpClient, HttpParams } from '@node_modules/@angular/common/http';
+import { Observable, BehaviorSubject } from '@node_modules/rxjs';
 import { ISearch } from '../interfaces/isearch';
 
 @Injectable({
