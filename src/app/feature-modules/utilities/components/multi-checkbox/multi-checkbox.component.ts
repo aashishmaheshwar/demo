@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "app-multi-checkbox",
+  selector: "devon-multi-checkbox",
   templateUrl: "./multi-checkbox.component.html",
   styleUrls: ["./multi-checkbox.component.css"]
 })

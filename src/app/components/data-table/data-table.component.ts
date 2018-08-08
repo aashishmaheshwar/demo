@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from "@angular/core";
 
 @Component({
-  selector: "app-data-table",
+  selector: "devon-data-table",
   templateUrl: "./data-table.component.html",
   styleUrls: ["./data-table.component.css"]
 })

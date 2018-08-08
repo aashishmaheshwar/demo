@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "app-multi-select-dropdown",
+  selector: "devon-multi-select-dropdown",
   templateUrl: "./multi-select-dropdown.component.html",
   styleUrls: ["./multi-select-dropdown.component.css"]
 })

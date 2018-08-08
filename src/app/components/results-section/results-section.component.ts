@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "app-results-section",
+  selector: "devon-results-section",
   templateUrl: "./results-section.component.html",
   styleUrls: ["./results-section.component.css"]
 })

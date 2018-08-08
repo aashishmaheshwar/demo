@@ -16,7 +16,7 @@
         </div>
       </div>
       <br>
-      <app-range-slider [options]="storage_rangeVals" title="STORAGE" (changeObj)="updateStorage($event)" [clear]="clearFilter"></app-range-slider>
+      <devon-range-slider [options]="storage_rangeVals" title="STORAGE" (changeObj)="updateStorage($event)" [clear]="clearFilter"></devon-range-slider>
       <div class="rangeValDiv">
         <ng-container *ngIf="search.storageMin !== undefined && search.storageMax !== undefined; else elseBlock">
           <span>{{search.storageMin > 500 ? (search.storageMin/1000)+'TB' : search.storageMin+'GB'}}</span> to
@@ -28,19 +28,19 @@
         </ng-template>
       </div>
       <br>
-      <app-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)" [clear]="clearFilter">
-      </app-multi-checkbox>
-      <app-multi-select-dropdown [options]="hardisk_multiSelVals" title="HDD" (changeObj)="updateSearch('hdd', $event)" [clear]="clearFilter">
-      </app-multi-select-dropdown>
-      <app-multi-select-dropdown [options]="location_multiSelVals" title="LOCATION" (changeObj)="updateSearch('location', $event)"
+      <devon-multi-checkbox [options]="checkboxVals" title="RAM" (changeObj)="updateSearch('ram', $event)" [clear]="clearFilter">
+      </devon-multi-checkbox>
+      <devon-multi-select-dropdown [options]="hardisk_multiSelVals" title="HDD" (changeObj)="updateSearch('hdd', $event)" [clear]="clearFilter">
+      </devon-multi-select-dropdown>
+      <devon-multi-select-dropdown [options]="location_multiSelVals" title="LOCATION" (changeObj)="updateSearch('location', $event)"
         [clear]="clearFilter">
-      </app-multi-select-dropdown>
+      </devon-multi-select-dropdown>
     </div>
     <!-- Filter box ends -->
     <!-- Results box begins -->
     <div class="resultsBox">
       <div>
-        <app-results-section [results]="apiResult | async"></app-results-section>
+        <devon-results-section [results]="apiResult | async"></devon-results-section>
       </div>
     </div>
     <!-- Results box ends -->
