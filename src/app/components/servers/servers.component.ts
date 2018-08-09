@@ -14,51 +14,15 @@ export class ServersComponent implements OnInit {
   clearFilter = false;
   filterDisabled = true;
   search: ISearch = {};
-  checkboxVals = [
-    { key: "2", selected: false },
-    { key: "4", selected: false },
-    { key: "8", selected: false },
-    { key: "12", selected: false },
-    { key: "16", selected: false },
-    { key: "24", selected: false },
-    { key: "32", selected: false },
-    { key: "48", selected: false },
-    { key: "64", selected: false },
-    { key: "96", selected: false }
-  ];
-  hardisk_multiSelVals = [
-    { key: "SAS", selected: false },
-    { key: "SATA2", selected: false },
-    { key: "SSD", selected: false }
-  ];
-  location_multiSelVals = [
-    { key: "AmsterdamAMS-01", selected: false },
-    { key: "Washington D.C.WDC-01", selected: false },
-    { key: "San FranciscoSFO-12", selected: false },
-    { key: "SingaporeSIN-11", selected: false },
-    { key: "DallasDAL-10", selected: false },
-    { key: "FrankfurtFRA-10", selected: false },
-    { key: "Hong KongHKG-10", selected: false }
-  ];
-  storage_rangeVals = [
-    0,
-    250,
-    500,
-    1000,
-    2000,
-    3000,
-    4000,
-    8000,
-    12000,
-    24000,
-    48000,
-    72000
-  ]; // all in GBs
-  // above is the input for rangeslider
+  ram_checkboxVals;
+  hardisk_multiSelVals;
+  location_multiSelVals;
+  storage_rangeVals;
 
   constructor(private _serverService: ServerService) {}
 
   ngOnInit() {
+    this.initializeFilters();
     this.apiResult = this._serverService.search.pipe(
       debounceTime(1000),
       switchMap(p => {
@@ -69,6 +33,34 @@ export class ServersComponent implements OnInit {
         return throwError(error.message);
       })
     );
+  }
+
+  initializeFilters() {
+    this.ram_checkboxVals = this._serverService
+      .getFilters()
+      ["ram"].map(elem => {
+        let transform = {};
+        transform["key"] = elem;
+        transform["selected"] = false;
+        return transform;
+      });
+    this.hardisk_multiSelVals = this._serverService
+      .getFilters()
+      ["hardisk"].map(elem => {
+        let transform = {};
+        transform["key"] = elem;
+        transform["selected"] = false;
+        return transform;
+      });
+    this.location_multiSelVals = this._serverService
+      .getFilters()
+      ["location"].map(elem => {
+        let transform = {};
+        transform["key"] = elem;
+        transform["selected"] = false;
+        return transform;
+      });
+    this.storage_rangeVals = [...this._serverService.getFilters()["storage"]]; // in GBs
   }
 
   updateStorage(value) {
