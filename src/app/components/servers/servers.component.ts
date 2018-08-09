@@ -28,7 +28,7 @@ export class ServersComponent implements OnInit {
     this.apiResult = this._serverService.search.pipe(
       debounceTime(1000),
       switchMap(p => {
-        return this._serverService.getServers(p);
+        return this._serverService.getServers_StaticData(p);
       }),
       catchError(error => {
         console.log(error);
