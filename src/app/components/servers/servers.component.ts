@@ -36,30 +36,21 @@ export class ServersComponent implements OnInit {
   }
 
   initializeFilters() {
+    let transformCallBack = function(x) {
+      let transform = {};
+      transform["key"] = x;
+      transform["selected"] = false;
+      return transform;
+    };
     this.ram_checkboxVals = this._serverService
       .getFilters()
-      ["ram"].map(elem => {
-        let transform = {};
-        transform["key"] = elem;
-        transform["selected"] = false;
-        return transform;
-      });
+      ["ram"].map(transformCallBack);
     this.hardisk_multiSelVals = this._serverService
       .getFilters()
-      ["hardisk"].map(elem => {
-        let transform = {};
-        transform["key"] = elem;
-        transform["selected"] = false;
-        return transform;
-      });
+      ["hardisk"].map(transformCallBack);
     this.location_multiSelVals = this._serverService
       .getFilters()
-      ["location"].map(elem => {
-        let transform = {};
-        transform["key"] = elem;
-        transform["selected"] = false;
-        return transform;
-      });
+      ["location"].map(transformCallBack);
     this.storage_rangeVals = [...this._serverService.getFilters()["storage"]]; // in GBs
   }
 
