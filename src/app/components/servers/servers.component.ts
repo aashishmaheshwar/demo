@@ -14,6 +14,8 @@ export class ServersComponent implements OnInit {
   clearFilter = false;
   filterDisabled = true;
   search: ISearch = {};
+
+  // filter Inputs
   ram_checkboxVals;
   hardisk_multiSelVals;
   location_multiSelVals;
