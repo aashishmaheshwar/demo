@@ -1,8 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { ISearch } from "@interfaces/isearch";
 import { ServerService } from "@services/server.service";
-import { switchMap, catchError, debounceTime } from "rxjs/operators";
+import {
+  catchError,
+  debounceTime,
+  finalize,
+  tap,
+  flatMap,
+  delay
+} from "rxjs/operators";
 import { throwError } from "@node_modules/rxjs";
+import { SpinnerService } from "app/feature-modules/utilities/services/spinner.service";
 
 @Component({
   selector: "devon-servers",
@@ -21,14 +29,25 @@ export class ServersComponent implements OnInit {
   location_multiSelVals;
   storage_rangeVals;
 
-  constructor(private _serverService: ServerService) {}
+  constructor(
+    private _serverService: ServerService,
+    private _spinnerService: SpinnerService
+  ) {}
 
   ngOnInit() {
     this.initializeFilters();
     this.apiResult = this._serverService.search.pipe(
-      debounceTime(1000),
-      switchMap(p => {
-        return this._serverService.getServers_StaticData(p);
+      debounceTime(500), // to avoid calling API too many times within a short time
+      flatMap(p => {
+        return this._serverService.getServers_StaticData(p).pipe(
+          tap(() => {
+            this._spinnerService.startLoading();
+          }),
+          delay(1000), // to mock network delay
+          finalize(() => {
+            this._spinnerService.stopLoading();
+          })
+        );
       }),
       catchError(error => {
         console.log(error);
