@@ -5,7 +5,8 @@
     "paths": {
       "@node_modules/*": ["./../node_modules/*"],
       "@interfaces/*": ["app/interfaces/*"],
-      "@services/*": ["app/services/*"]
+      "@services/*": ["app/services/*"],
+      "@services_utilities/*": ["app/feature-modules/utilities/services/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

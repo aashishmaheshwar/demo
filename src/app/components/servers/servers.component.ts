@@ -37,12 +37,12 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
     this.initializeFilters();
     this.apiResult = this._serverService.search.pipe(
+      tap(() => {
+        this._spinnerService.startLoading();
+      }),
       debounceTime(500), // to avoid calling API too many times within a short time
       flatMap(p => {
         return this._serverService.getServers_StaticData(p).pipe(
-          tap(() => {
-            this._spinnerService.startLoading();
-          }),
           delay(1000), // to mock network delay
           finalize(() => {
             this._spinnerService.stopLoading();

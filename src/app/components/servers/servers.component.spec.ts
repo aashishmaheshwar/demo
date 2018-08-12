@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ServersComponent } from "./servers.component";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
 describe("SearchBoxComponent", () => {
   let component: ServersComponent;
@@ -8,7 +10,8 @@ describe("SearchBoxComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ServersComponent]
+      declarations: [ServersComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 

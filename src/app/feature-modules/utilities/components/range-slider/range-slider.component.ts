@@ -13,10 +13,14 @@ import {
   styleUrls: ["./range-slider.component.css"]
 })
 export class RangeSliderComponent implements OnInit, OnChanges {
-  @Input() options: [any];
-  @Input() title: string;
-  @Input() clear: boolean;
-  @Output() changeObj: EventEmitter<any> = new EventEmitter<any>();
+  @Input()
+  options: any[];
+  @Input()
+  title: string;
+  @Input()
+  clear: boolean;
+  @Output()
+  changeObj: EventEmitter<any> = new EventEmitter<any>();
   rangeValues = [];
   actualValues = [];
 
