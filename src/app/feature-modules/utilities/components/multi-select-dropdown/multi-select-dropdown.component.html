@@ -4,7 +4,7 @@
     <span class="titleLabel">{{title}}</span>
   </div>
   <div class="multiselectBox">
-    <input type="text" style="float: left; width: 15vw;" (focus)="displayBox = 'block'" (blur)="openfor3secs();" [value]="selection">
+    <input type="text" class="multiselectInput" (focus)="displayBox = 'block'" (blur)="openfor3secs();" [value]="selection">
     <br>
     <div class="dropdownBox" [ngStyle]="{'display': displayBox}">
       <ng-container *ngFor="let option of options">

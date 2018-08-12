@@ -1,36 +1,40 @@
 .inline > div {
-    display: inline-block;
+  display: inline-block;
 }
 
 .multiselectBox {
-    width: 15vw;
-    /* padding: 3px; */
-    margin-right: 0px;
-    position: absolute;
+  width: 15vw;
+  margin-right: 0px;
+  position: absolute;
+}
+
+.multiselectInput {
+  float: left;
+  width: 15vw;
 }
 
 .dropdownBox {
-    padding: 2px; 
-    padding-top: 1.5px; 
-    width: 15vw; 
-    border: 1px solid lightcoral;
-    position: absolute;
-    z-index: 10;
-    background-color: white;
+  padding: 2px;
+  padding-top: 1.5px;
+  width: 15vw;
+  border: 1px solid lightcoral;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
 }
 
 .titleLabel {
-    color: red; 
-    background-color: lightgoldenrodyellow; 
-    padding: 3px; 
-    margin: 1vw;
+  color: red;
+  background-color: lightgoldenrodyellow;
+  padding: 3px;
+  margin: 1vw;
 }
 
 .rowDiv {
-    float: left; 
-    position: absolute;
+  float: left;
+  position: absolute;
 }
 
 .titleDiv {
-    width: 8vw;
+  width: 8vw;
 }
