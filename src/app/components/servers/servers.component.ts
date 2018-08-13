@@ -37,10 +37,10 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
     this.initializeFilters();
     this.apiResult = this._serverService.search.pipe(
+      debounceTime(500), // to avoid calling API too many times within a short time
       tap(() => {
         this._spinnerService.startLoading();
       }),
-      debounceTime(500), // to avoid calling API too many times within a short time
       flatMap(p => {
         return this._serverService.getServers_StaticData(p).pipe(
           delay(1000), // to mock network delay
@@ -77,9 +77,17 @@ export class ServersComponent implements OnInit {
 
   updateStorage(value) {
     this.clearFilter = false;
-    this.filterDisabled = false;
-    this.search["storageMin"] = value[0];
-    this.search["storageMax"] = value[1];
+    if (value[0] === 0 && value[1] === 72000) {
+      delete this.search["storageMin"];
+      delete this.search["storageMax"];
+      if (JSON.stringify(this.search) === "{}") {
+        this.filterDisabled = true;
+      }
+    } else {
+      this.filterDisabled = false;
+      this.search["storageMin"] = value[0];
+      this.search["storageMax"] = value[1];
+    }
     this._serverService.search.next(this.search);
   }
 
